@@ -1,0 +1,103 @@
+Input Notebook:  ./acd_binary/acd_binary_trainer.ipynb
+Output Notebook: ./papermill_nbs/acd_binary_trainer.ipynb
+Executing:   0%|          | 0/34 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   3%|▎         | 1/34 [00:01<00:42,  1.29s/cell]Executing:   9%|▉         | 3/34 [00:03<00:33,  1.07s/cell]Executing:  15%|█▍        | 5/34 [00:03<00:16,  1.81cell/s]Executing:  18%|█▊        | 6/34 [00:04<00:16,  1.74cell/s]Executing:  26%|██▋       | 9/34 [00:04<00:07,  3.48cell/s]Executing:  32%|███▏      | 11/34 [00:05<00:09,  2.35cell/s]Executing:  35%|███▌      | 12/34 [00:08<00:20,  1.05cell/s]Executing:  38%|███▊      | 13/34 [00:09<00:19,  1.07cell/s]Executing:  38%|███▊      | 13/34 [00:10<00:17,  1.22cell/s]
+Traceback (most recent call last):
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/bin/papermill", line 10, in <module>
+    sys.exit(papermill())
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/decorators.py", line 26, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/cli.py", line 250, in papermill
+    execute_notebook(
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/execute.py", line 122, in execute_notebook
+    raise_for_execution_errors(nb, output_path)
+  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/execute.py", line 234, in raise_for_execution_errors
+    raise error
+papermill.exceptions.PapermillExecutionError: 
+---------------------------------------------------------------------------
+Exception encountered at "In [9]":
+---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+Input In [9], in <cell line: 4>()
+      2 dev_path = '../dataset/cleaned_v2_total_v1/raw_dev.csv'
+      3 test_path = '../dataset/cleaned_v2_total_v1/raw_test.csv'
+----> 4 train = pd.read_csv(train_path)
+      5 dev = pd.read_csv(dev_path)
+      6 test = pd.read_csv(test_path)
+
+File ~/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/pandas/util/_decorators.py:311, in deprecate_nonkeyword_arguments.<locals>.decorate.<locals>.wrapper(*args, **kwargs)
+    305 if len(args) > num_allow_args:
+    306     warnings.warn(
+    307         msg.format(arguments=arguments),
+    308         FutureWarning,
+    309         stacklevel=stacklevel,
+    310     )
+--> 311 return func(*args, **kwargs)
+
+File ~/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/pandas/io/parsers/readers.py:678, in read_csv(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)
+    663 kwds_defaults = _refine_defaults_read(
+    664     dialect,
+    665     delimiter,
+   (...)
+    674     defaults={"delimiter": ","},
+    675 )
+    676 kwds.update(kwds_defaults)
+--> 678 return _read(filepath_or_buffer, kwds)
+
+File ~/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/pandas/io/parsers/readers.py:575, in _read(filepath_or_buffer, kwds)
+    572 _validate_names(kwds.get("names", None))
+    574 # Create the parser.
+--> 575 parser = TextFileReader(filepath_or_buffer, **kwds)
+    577 if chunksize or iterator:
+    578     return parser
+
+File ~/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/pandas/io/parsers/readers.py:932, in TextFileReader.__init__(self, f, engine, **kwds)
+    929     self.options["has_index_names"] = kwds["has_index_names"]
+    931 self.handles: IOHandles | None = None
+--> 932 self._engine = self._make_engine(f, self.engine)
+
+File ~/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1216, in TextFileReader._make_engine(self, f, engine)
+   1212     mode = "rb"
+   1213 # error: No overload variant of "get_handle" matches argument types
+   1214 # "Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]"
+   1215 # , "str", "bool", "Any", "Any", "Any", "Any", "Any"
+-> 1216 self.handles = get_handle(  # type: ignore[call-overload]
+   1217     f,
+   1218     mode,
+   1219     encoding=self.options.get("encoding", None),
+   1220     compression=self.options.get("compression", None),
+   1221     memory_map=self.options.get("memory_map", False),
+   1222     is_text=is_text,
+   1223     errors=self.options.get("encoding_errors", "strict"),
+   1224     storage_options=self.options.get("storage_options", None),
+   1225 )
+   1226 assert self.handles is not None
+   1227 f = self.handles.handle
+
+File ~/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/pandas/io/common.py:786, in get_handle(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)
+    781 elif isinstance(handle, str):
+    782     # Check whether the filename is to be opened in binary mode.
+    783     # Binary mode does not support 'encoding' and 'newline'.
+    784     if ioargs.encoding and "b" not in ioargs.mode:
+    785         # Encoding
+--> 786         handle = open(
+    787             handle,
+    788             ioargs.mode,
+    789             encoding=ioargs.encoding,
+    790             errors=errors,
+    791             newline="",
+    792         )
+    793     else:
+    794         # Binary mode
+    795         handle = open(handle, ioargs.mode)
+
+FileNotFoundError: [Errno 2] No such file or directory: '../dataset/cleaned_v2_total_v1/raw_train.csv'
+
