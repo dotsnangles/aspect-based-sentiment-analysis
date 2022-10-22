@@ -1,2 +1,9 @@
-dataset
-training_results
+*.jsonl
+*.json
+*.bin
+*.csv
+
+__pycache__
+wandb
+
+vocab.txt
