@@ -2,6 +2,9 @@
 *.json
 *.bin
 *.csv
+*.pt
+*.pth
+
 
 __pycache__
 wandb
