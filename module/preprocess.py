@@ -40,3 +40,12 @@ def preprocess(text):
     # text = spacing(text)
     # text = spell_checker.check(text).checked
     return text.upper().strip()
+
+def decorate_form(form):
+    return f'<<{form}>>'
+
+def decorate_acd_pair(entity):
+    return f'상품평 문장의 범주 유형은 <<{entity}>>이다.'
+
+def decorate_asc_pair(entity, sentiment):
+    return f'상품평 문장의 범주 유형이 <<{entity}>>일 때 감성 유형은 <<{sentiment}>>이다.'
