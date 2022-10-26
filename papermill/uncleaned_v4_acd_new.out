@@ -1,7 +1,0 @@
-Input Notebook:  ./acd_binary_trainer.ipynb
-Output Notebook: ./papermill/acd_binary_trainer.ipynb
-Executing:   0%|          | 0/31 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/31 [00:01<00:39,  1.31s/cell]Executing:  10%|▉         | 3/31 [00:03<00:36,  1.29s/cell]Executing:  13%|█▎        | 4/31 [00:04<00:24,  1.09cell/s]Executing:  19%|█▉        | 6/31 [00:04<00:15,  1.58cell/s]Executing:  29%|██▉       | 9/31 [00:04<00:07,  3.06cell/s]Executing:  35%|███▌      | 11/31 [00:06<00:09,  2.09cell/s]Executing:  39%|███▊      | 12/31 [00:10<00:21,  1.16s/cell]
-
-
-Executing:  42%|████▏     | 13/31 [00:13<00:27,  1.51s/cell]Executing:  48%|████▊     | 15/31 [00:13<00:15,  1.04cell/s]Executing:  58%|█████▊    | 18/31 [00:16<00:13,  1.04s/cell]Executing:  68%|██████▊   | 21/31 [00:16<00:06,  1.54cell/s]Executing:  68%|██████▊   | 21/31 [00:30<00:06,  1.54cell/s]Executing:  71%|███████   | 22/31 [00:48<00:49,  5.50s/cell]Executing:  77%|███████▋  | 24/31 [00:50<00:28,  4.11s/cell]Executing:  84%|████████▍ | 26/31 [00:50<00:14,  2.87s/cell]Executing:  90%|█████████ | 28/31 [00:53<00:07,  2.37s/cell]
