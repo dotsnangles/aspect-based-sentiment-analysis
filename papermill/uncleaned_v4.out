@@ -4,4 +4,15 @@ Output Notebook: ./papermill/acd_binary_trainer.ipynb
 Executing:   3%|▎         | 1/31 [00:01<00:41,  1.39s/cell]Executing:  10%|▉         | 3/31 [00:03<00:36,  1.31s/cell]Executing:  13%|█▎        | 4/31 [00:04<00:25,  1.07cell/s]Executing:  19%|█▉        | 6/31 [00:04<00:16,  1.56cell/s]Executing:  26%|██▌       | 8/31 [00:04<00:09,  2.51cell/s]Executing:  32%|███▏      | 10/31 [00:06<00:11,  1.80cell/s]Executing:  39%|███▊      | 12/31 [00:10<00:20,  1.09s/cell]
 
 
-Executing:  42%|████▏     | 13/31 [00:13<00:25,  1.42s/cell]Executing:  52%|█████▏    | 16/31 [00:13<00:11,  1.27cell/s]Executing:  58%|█████▊    | 18/31 [00:17<00:13,  1.06s/cell]Executing:  68%|██████▊   | 21/31 [00:17<00:06,  1.52cell/s]Executing:  68%|██████▊   | 21/31 [00:30<00:06,  1.52cell/s]Executing:  71%|███████   | 22/31 [01:09<01:18,  8.77s/cell]Executing:  74%|███████▍  | 23/31 [01:09<00:57,  7.17s/cell]
+Executing:  42%|████▏     | 13/31 [00:13<00:25,  1.42s/cell]Executing:  52%|█████▏    | 16/31 [00:13<00:11,  1.27cell/s]Executing:  58%|█████▊    | 18/31 [00:17<00:13,  1.06s/cell]Executing:  68%|██████▊   | 21/31 [00:17<00:06,  1.52cell/s]Executing:  68%|██████▊   | 21/31 [00:30<00:06,  1.52cell/s]Executing:  71%|███████   | 22/31 [01:09<01:18,  8.77s/cell]Executing:  74%|███████▍  | 23/31 [01:09<00:57,  7.17s/cell]Executing:  81%|████████  | 25/31 [01:12<00:31,  5.32s/cell]Executing:  87%|████████▋ | 27/31 [01:12<00:14,  3.59s/cell]Executing:  90%|█████████ | 28/31 [01:15<00:10,  3.44s/cell]Executing:  97%|█████████▋| 30/31 [1:58:33<20:43, 1243.89s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Executing: 100%|██████████| 31/31 [1:58:34<00:00, 993.76s/cell] Executing: 100%|██████████| 31/31 [1:58:38<00:00, 229.61s/cell]
+Input Notebook:  ./asc_binary_trainer.ipynb
+Output Notebook: ./papermill/asc_binary_trainer.ipynb
+Executing:   0%|          | 0/31 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   3%|▎         | 1/31 [00:01<00:42,  1.43s/cell]Executing:  10%|▉         | 3/31 [00:04<00:38,  1.37s/cell]Executing:  13%|█▎        | 4/31 [00:04<00:27,  1.00s/cell]Executing:  19%|█▉        | 6/31 [00:05<00:16,  1.49cell/s]Executing:  29%|██▉       | 9/31 [00:05<00:07,  2.87cell/s]Executing:  32%|███▏      | 10/31 [00:06<00:12,  1.71cell/s]Executing:  39%|███▊      | 12/31 [00:11<00:22,  1.19s/cell]
+
+
+Executing:  42%|████▏     | 13/31 [00:13<00:26,  1.49s/cell]Executing:  52%|█████▏    | 16/31 [00:14<00:12,  1.23cell/s]Executing:  58%|█████▊    | 18/31 [00:17<00:14,  1.08s/cell]Executing:  68%|██████▊   | 21/31 [00:17<00:06,  1.49cell/s]Executing:  74%|███████▍  | 23/31 [00:25<00:12,  1.60s/cell]Executing:  77%|███████▋  | 24/31 [00:26<00:10,  1.43s/cell]Executing:  87%|████████▋ | 27/31 [00:26<00:03,  1.16cell/s]Executing:  94%|█████████▎| 29/31 [00:29<00:01,  1.01cell/s]
