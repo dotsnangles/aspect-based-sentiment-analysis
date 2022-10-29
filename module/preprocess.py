@@ -48,20 +48,23 @@ sentiment2kor = {
 }
 
 def decorate_form(form):
-    return f'상품평 문장: <<{form}>>'
+    return f'Target#{form}'
+    # return f'상품평 문장: <<{form}>>'
 
 def decorate_acd_pair(entity):
-    return f'상품평 문장의 범주 유형은 <<{entity}>>이다.'
+    return f'Target#{entity}'
+    # return f'상품평 문장의 범주 유형은 <<{entity}>>이다.'
 
 def decorate_acd_pair_split(entity):
     props = entity.split('#')
     return f'상품평 문장의 대범주 유형은 <<{props[0]}>>이고 소범주 유형은 <<{props[1]}>>이다.'
 
 def decorate_asc_pair(entity, sentiment):
+    return f'Target#{entity}#{sentiment}'
+    # return f'상품평 문장의 범주 유형이 <<{entity}>>일 때 감성 유형은 <<{sentiment}>>이다.'
     # return f'상품평 문장의 범주 유형이 <<{entity}>>일 때 감성 유형은 <<{sentiment2kor[sentiment]}>>이다.'
-    return f'상품평 문장의 범주 유형이 <<{entity}>>일 때 감성 유형은 <<{sentiment}>>이다.'
 
 def decorate_asc_pair_split(entity, sentiment):
     props = entity.split('#')
-    # return f'상품평 문장의 대범주 유형이 <<{props[0]}>>이고 소범주 유형은 <<{props[1]}>>일 때 감성 유형은 <<{sentiment2kor[sentiment]}>>이다.'
     return f'상품평 문장의 대범주 유형이 <<{props[0]}>>이고 소범주 유형은 <<{props[1]}>>일 때 감성 유형은 <<{sentiment}>>이다.'
+    # return f'상품평 문장의 대범주 유형이 <<{props[0]}>>이고 소범주 유형은 <<{props[1]}>>일 때 감성 유형은 <<{sentiment2kor[sentiment]}>>이다.'
