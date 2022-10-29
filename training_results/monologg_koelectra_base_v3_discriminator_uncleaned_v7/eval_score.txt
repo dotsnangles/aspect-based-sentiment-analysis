@@ -1,0 +1,8 @@
+ACD_CHECKPOINT:  training_results/monologg_koelectra_base_v3_discriminator_uncleaned_v7/acd/monologg_koelectra_base_v3_discriminator_uncleaned_v7/checkpoint-5860
+ASC_CHECKPOINT:  training_results/monologg_koelectra_base_v3_discriminator_uncleaned_v7/asc/monologg_koelectra_base_v3_discriminator_uncleaned_v7/checkpoint-750
+INFERENCE DATA:  dataset/nikluge-sa-2022-dev.jsonl
+EVAL_MODE : True
+CATEGORY_FILTER:  False
+SENTIMENT_FILTER:  False
+('category extraction result', {'Precision': 0.7543135783945987, 'Recall': 0.6531341344592401, 'F1': 0.7000870322019147})
+('entire pipeline result', {'Precision': 0.7381041588609967, 'Recall': 0.6398181227671322, 'F1': 0.6854558107167711})

@@ -15,4 +15,8 @@ Output Notebook: ./papermill/asc_binary_trainer.ipynb
 Executing:   3%|▎         | 1/31 [00:01<00:51,  1.71s/cell]Executing:  10%|▉         | 3/31 [00:04<00:45,  1.62s/cell]Executing:  16%|█▌        | 5/31 [00:05<00:21,  1.22cell/s]Executing:  19%|█▉        | 6/31 [00:05<00:19,  1.26cell/s]Executing:  29%|██▉       | 9/31 [00:05<00:08,  2.58cell/s]Executing:  35%|███▌      | 11/31 [00:07<00:10,  1.86cell/s]Executing:  39%|███▊      | 12/31 [00:14<00:33,  1.74s/cell]
 
 
-Executing:  42%|████▏     | 13/31 [00:17<00:35,  1.99s/cell]Executing:  52%|█████▏    | 16/31 [00:17<00:15,  1.05s/cell]Executing:  58%|█████▊    | 18/31 [00:20<00:16,  1.25s/cell]Executing:  68%|██████▊   | 21/31 [00:20<00:07,  1.31cell/s]Executing:  74%|███████▍  | 23/31 [00:27<00:11,  1.50s/cell]Executing:  77%|███████▋  | 24/31 [00:27<00:09,  1.32s/cell]Executing:  84%|████████▍ | 26/31 [00:28<00:04,  1.09cell/s]Executing:  90%|█████████ | 28/31 [00:31<00:03,  1.21s/cell]
+Executing:  42%|████▏     | 13/31 [00:17<00:35,  1.99s/cell]Executing:  52%|█████▏    | 16/31 [00:17<00:15,  1.05s/cell]Executing:  58%|█████▊    | 18/31 [00:20<00:16,  1.25s/cell]Executing:  68%|██████▊   | 21/31 [00:20<00:07,  1.31cell/s]Executing:  74%|███████▍  | 23/31 [00:27<00:11,  1.50s/cell]Executing:  77%|███████▋  | 24/31 [00:27<00:09,  1.32s/cell]Executing:  84%|████████▍ | 26/31 [00:28<00:04,  1.09cell/s]Executing:  90%|█████████ | 28/31 [00:31<00:03,  1.21s/cell]Executing:  97%|█████████▋| 30/31 [23:04<03:30, 210.36s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Executing: 100%|██████████| 31/31 [23:05<00:00, 172.49s/cell]Executing: 100%|██████████| 31/31 [23:09<00:00, 44.81s/cell] 
