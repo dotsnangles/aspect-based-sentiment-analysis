@@ -9,8 +9,12 @@ def count_tags(df, entity_property_pair):
     for idx, row in df.iterrows():
         if len(row.annotation) > 0:
             for annotation in row.annotation:
-                tags.append(annotation[0])
-                count += 1
+                try:
+                    tags.append(annotation[0])
+                    count += 1
+                except Exception as e:
+                    print(e)
+                    print(row.id)
 
     print('tags found: ', count)
     print('tag set of df: ', len(set(tags)))
