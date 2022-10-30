@@ -3,6 +3,36 @@ from typing import Counter
 
 from collections import Counter
 
+def adjust_target(sentence_form, target):
+    split_sent = sentence_form.split(' ')
+    split_target = target.split(' ')
+    if len(split_target) > 1:
+        first = split_target[0]
+        last = split_target[-1]
+
+        for el in split_sent:
+            if first in el:
+                first = el
+        for el in split_sent:
+            if last in el:
+                last = el
+        
+        first_idx = sentence_form.index(first)
+        last_idx = sentence_form.index(last) + len(last)
+        target_rng = [first_idx, last_idx]
+        target = sentence_form[first_idx:last_idx]
+        return target, target_rng
+    
+    else:
+        for el in split_sent:
+            if target in el:
+                target = el
+
+        target_idx = sentence_form.index(target)
+        target_rng = [target_idx, target_idx + len(target)]
+        target = sentence_form[target_rng[0]:target_rng[1]]
+        return target, target_rng
+
 def count_tags(df, entity_property_pair):
     count = 0
     tags = []
