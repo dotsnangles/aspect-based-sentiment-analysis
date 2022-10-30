@@ -33,7 +33,8 @@ def make_token_classification_pair(original_input, annotations):
     for annotation in annotations:
         if annotation[1][0] != None:
             target = annotation[1][1:]
-            targets.append(target)
+            if target not in targets:
+                targets.append(target)
     targets.sort()
     input_len = len(original_input)
 
@@ -67,19 +68,32 @@ def remove_props(df, filter):
     df = df[df.checker == True].copy()
     return df
 
-# def remove_props(df, filter):
-#     for idx, row in df.iterrows():
-#         empty = []
-#         stay = True
-#         for annotation in row.annotation:
-#             if annotation[0] not in filter:
-#             # if annotation[0] not in filter or annotation[2] != 'positive':
-#                 stay = False
-#         if stay == False:
-#             row.annotation = empty
-#     df['check'] = df.annotation.apply(lambda x: bool(x))
-#     df = df.drop(df[df.check == False].index)
-#     return df
+def generate_token_classification_data(df):
+    split_inputs, split_labels = [], []
+    for original_input, annotations in zip(df.sentence_form, df.annotation):
+        split_input, split_label = make_token_classification_pair(original_input, annotations)
+        split_inputs.append(split_input)
+        split_labels.append(split_label)
+    return split_inputs, split_labels
+
+def align_tokens_and_labels(df, tokenizer):
+    input_tokens_list, labels = [], []
+    for _, row in df.iterrows():
+        split_form, label = row.split_form,	row.split_label
+        for idx in range(len(split_form)):
+            tokens = tokenizer.tokenize(split_form[idx])
+            if label[idx] == 0:
+                label[idx] = [label[idx] for _ in range(len(tokens))]
+            else:
+                label[idx] = [label[idx] if i == 0 else 2  for i in range(len(tokens))]
+                pass
+            split_form[idx] = tokens
+
+        input_tokens = ['[CLS]'] + [x for el in split_form for x in el] + ['[SEP]']
+        label = [-100] + [x for el in label for x in el] + [-100]
+        input_tokens_list.append(input_tokens)
+        labels.append(label)
+    return input_tokens_list, labels
 
 def get_filter():
     # filter = ['본품#품질',
