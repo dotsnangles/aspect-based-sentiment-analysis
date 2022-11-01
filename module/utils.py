@@ -13,9 +13,13 @@ def adjust_target(sentence_form, target):
         for el in split_sent:
             if first in el:
                 first = el
-        for el in split_sent:
+                break
+        
+        split_sent_backwards = split_sent[::-1]
+        for el in split_sent_backwards:
             if last in el:
                 last = el
+                break
         
         first_idx = sentence_form.index(first)
         last_idx = sentence_form.index(last) + len(last)

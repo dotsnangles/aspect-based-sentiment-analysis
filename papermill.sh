@@ -6,7 +6,13 @@
 
 
 
-papermill ./acd_binary_trainer.ipynb ./papermill/acd_binary_trainer.ipynb
-papermill ./asc_binary_trainer.ipynb ./papermill/asc_binary_trainer.ipynb
+# papermill ./acd_binary_trainer.ipynb ./papermill/acd_binary_trainer.ipynb
+# papermill ./asc_binary_trainer.ipynb ./papermill/asc_binary_trainer.ipynb
 
 # nohup bash papermill.sh > ./papermill/uncleaned_v11.out
+
+
+
+papermill ./taget_tagger_tabsa_trainer.ipynb ./papermill/taget_tagger_tabsa_trainer.ipynb
+
+# nohup bash papermill.sh > ./papermill/uncleaned_v11_tabsa.out
