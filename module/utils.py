@@ -18,15 +18,17 @@ def adjust_target(sentence_form, target):
         for idx in range(len(split_sent)):
             if last in split_sent[idx]:
                 l_idx = idx
+                if target in ' '.join(split_sent[f_idx:l_idx+1]):
+                    break
                 
-        target = ' '.join(split_sent[f_idx:l_idx+1])
+        new_target = ' '.join(split_sent[f_idx:l_idx+1])
         
-        first_idx = sentence_form.index(target)
-        last_idx = sentence_form.index(target) + len(target)
+        first_idx = sentence_form.index(new_target)
+        last_idx = sentence_form.index(new_target) + len(new_target)
         
-        target_rng = [first_idx, last_idx]
-        target = sentence_form[first_idx:last_idx]
-        return target, target_rng
+        new_target_rng = [first_idx, last_idx]
+        new_target = sentence_form[first_idx:last_idx] # just to double check
+        return new_target, new_target_rng
     
     else:
         for el in split_sent:
@@ -34,9 +36,9 @@ def adjust_target(sentence_form, target):
                 target = el
 
         target_idx = sentence_form.index(target)
-        target_rng = [target_idx, target_idx + len(target)]
-        target = sentence_form[target_rng[0]:target_rng[1]]
-        return target, target_rng
+        new_target_rng = [target_idx, target_idx + len(target)]
+        new_target = sentence_form[new_target_rng[0]:new_target_rng[1]]
+        return new_target, new_target_rng
 
 def count_tags(df, entity_property_pair):
     count = 0
