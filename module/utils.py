@@ -10,19 +10,20 @@ def adjust_target(sentence_form, target):
         first = split_target[0]
         last = split_target[-1]
 
-        for el in split_sent:
-            if first in el:
-                first = el
+        for idx in range(len(split_sent)):
+            if first in split_sent[idx]:
+                f_idx = idx
                 break
+
+        for idx in range(len(split_sent)):
+            if last in split_sent[idx]:
+                l_idx = idx
+                
+        target = ' '.join(split_sent[f_idx:l_idx+1])
         
-        split_sent_backwards = split_sent[::-1]
-        for el in split_sent_backwards:
-            if last in el:
-                last = el
-                break
+        first_idx = sentence_form.index(target)
+        last_idx = sentence_form.index(target) + len(target)
         
-        first_idx = sentence_form.index(first)
-        last_idx = sentence_form.index(last) + len(last)
         target_rng = [first_idx, last_idx]
         target = sentence_form[first_idx:last_idx]
         return target, target_rng
