@@ -62,8 +62,11 @@ def count_tags(df, entity_property_pair):
     tag_counter = sorted(tag_counter.items(), key=lambda x: x[1], reverse=True)
     
     for k, v in tag_counter:
-        # print(k.ljust(20), v)
-        print(f'{k}\t{v}')
+        # print(k.rjust(20), str(v).rjust(10))
+        if len(k) < len('제품 전체#편의성'):
+            print(f'{k}\t\t{v}')
+        else:
+            print(f'{k}\t{v}')
         
 def make_token_classification_pair(original_input, annotations):
     targets = []
