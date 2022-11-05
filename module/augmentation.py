@@ -31,7 +31,7 @@ def back_trans(text):
 
 def random_insert(num, sample, device='cuda'):
     aug = naw.ContextualWordEmbsAug(
-        model_path=model_checkpoint, action="insert", model_type='bert', top_k=5, aug_p=0.3, aug_min=1, aug_max=1, device=device)
+        model_path=model_checkpoint, action="insert", model_type='bert', top_k=25, aug_p=0.3, aug_min=1, aug_max=1, device=device)
 
     aug_result = aug.augment(sample, n=num, num_thread=12)
     aug_result = list(map(del_tokens, aug_result))
@@ -40,7 +40,7 @@ def random_insert(num, sample, device='cuda'):
 
 def random_replace(num, sample, device='cuda'):
     aug = naw.ContextualWordEmbsAug(
-        model_path=model_checkpoint, action="insert", model_type='bert', top_k=5, aug_p=0.3, aug_min=1, aug_max=1, device=device)
+        model_path=model_checkpoint, action="insert", model_type='bert', top_k=25, aug_p=0.3, aug_min=1, aug_max=1, device=device)
 
     aug_result = aug.augment(sample, n=num, num_thread=12)
     aug_result = list(map(del_tokens, aug_result))
