@@ -1,0 +1,14 @@
+Input Notebook:  ./trainer_for_acd_b_new.ipynb
+Output Notebook: ./papermill/trainer_for_acd_b_new.ipynb
+Executing:   0%|          | 0/30 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   3%|▎         | 1/30 [00:01<00:50,  1.74s/cell]Executing:  10%|█         | 3/30 [00:05<00:50,  1.89s/cell]Executing:  17%|█▋        | 5/30 [00:05<00:23,  1.06cell/s]Executing:  20%|██        | 6/30 [00:06<00:21,  1.12cell/s]Executing:  27%|██▋       | 8/30 [00:06<00:11,  1.85cell/s]Executing:  33%|███▎      | 10/30 [00:08<00:13,  1.50cell/s]Executing:  40%|████      | 12/30 [00:13<00:22,  1.27s/cell]
+
+
+Executing:  43%|████▎     | 13/30 [00:14<00:23,  1.38s/cell]Executing:  53%|█████▎    | 16/30 [00:15<00:10,  1.32cell/s]Executing:  60%|██████    | 18/30 [00:18<00:12,  1.03s/cell]Executing:  70%|███████   | 21/30 [00:33<00:23,  2.61s/cell]Executing:  77%|███████▋  | 23/30 [00:37<00:17,  2.52s/cell]Executing:  87%|████████▋ | 26/30 [00:38<00:06,  1.60s/cell]Executing:  93%|█████████▎| 28/30 [00:44<00:04,  2.04s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
