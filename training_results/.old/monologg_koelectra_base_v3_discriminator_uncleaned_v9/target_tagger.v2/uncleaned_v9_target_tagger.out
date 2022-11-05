@@ -1,11 +1,0 @@
-Input Notebook:  ./target_tagger_trainer.ipynb
-Output Notebook: ./papermill/target_tagger_trainer.ipynb
-Executing:   0%|          | 0/33 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/33 [00:01<00:47,  1.48s/cell]Executing:   9%|▉         | 3/33 [00:04<00:48,  1.61s/cell]Executing:  12%|█▏        | 4/33 [00:04<00:31,  1.10s/cell]Executing:  18%|█▊        | 6/33 [00:05<00:19,  1.39cell/s]Executing:  24%|██▍       | 8/33 [00:05<00:11,  2.26cell/s]Executing:  30%|███       | 10/33 [00:07<00:13,  1.72cell/s]Executing:  36%|███▋      | 12/33 [00:12<00:27,  1.29s/cell]
-
-
-Executing:  39%|███▉      | 13/33 [00:14<00:29,  1.48s/cell]Executing:  48%|████▊     | 16/33 [00:14<00:13,  1.23cell/s]Executing:  55%|█████▍    | 18/33 [00:18<00:16,  1.09s/cell]Executing:  64%|██████▎   | 21/33 [00:18<00:08,  1.48cell/s]Executing:  70%|██████▉   | 23/33 [00:18<00:05,  1.79cell/s]Executing:  73%|███████▎  | 24/33 [00:19<00:05,  1.60cell/s]Executing:  79%|███████▉  | 26/33 [00:20<00:03,  2.07cell/s]Executing:  88%|████████▊ | 29/33 [00:20<00:01,  3.28cell/s]Executing:  94%|█████████▍| 31/33 [00:24<00:01,  1.26cell/s]Executing:  97%|█████████▋| 32/33 [12:05<01:56, 116.95s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Executing: 100%|██████████| 33/33 [12:06<00:00, 94.84s/cell] Executing: 100%|██████████| 33/33 [12:12<00:00, 22.20s/cell]

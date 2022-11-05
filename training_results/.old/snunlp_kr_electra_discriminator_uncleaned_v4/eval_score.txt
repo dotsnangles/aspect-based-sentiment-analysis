@@ -1,6 +1,0 @@
-{'category extraction result': {'Precision': 0.7258467023172905,
-  'Recall': 0.661253653783696,
-  'F1': 0.6920462270564242},
- 'entire pipeline result': {'Precision': 0.7122994652406417,
-  'Recall': 0.6489119844105229,
-  'F1': 0.6791298436437797}}

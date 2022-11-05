@@ -1,22 +1,0 @@
-Input Notebook:  ./trainer_for_acd_binary.ipynb
-Output Notebook: ./papermill/trainer_for_acd_binary.ipynb
-Executing:   0%|          | 0/30 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/30 [00:01<00:39,  1.37s/cell]Executing:  10%|█         | 3/30 [00:04<00:39,  1.46s/cell]Executing:  13%|█▎        | 4/30 [00:04<00:26,  1.03s/cell]Executing:  20%|██        | 6/30 [00:05<00:16,  1.47cell/s]Executing:  30%|███       | 9/30 [00:05<00:07,  2.88cell/s]Executing:  37%|███▋      | 11/30 [00:07<00:10,  1.86cell/s]Executing:  40%|████      | 12/30 [00:11<00:24,  1.35s/cell]
-
-
-Executing:  43%|████▎     | 13/30 [00:13<00:23,  1.39s/cell]Executing:  50%|█████     | 15/30 [00:13<00:13,  1.13cell/s]Executing:  57%|█████▋    | 17/30 [00:16<00:15,  1.16s/cell]Executing:  67%|██████▋   | 20/30 [00:17<00:06,  1.46cell/s]Executing:  67%|██████▋   | 20/30 [00:30<00:06,  1.46cell/s]Executing:  70%|███████   | 21/30 [00:51<00:57,  6.44s/cell]Executing:  77%|███████▋  | 23/30 [00:53<00:32,  4.69s/cell]Executing:  83%|████████▎ | 25/30 [00:53<00:16,  3.21s/cell]Executing:  90%|█████████ | 27/30 [00:57<00:08,  2.69s/cell]Executing:  97%|█████████▋| 29/30 [4:03:01<37:23, 2243.33s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Executing: 100%|██████████| 30/30 [4:03:03<00:00, 1838.47s/cell]Executing: 100%|██████████| 30/30 [4:03:07<00:00, 486.26s/cell] 
-Input Notebook:  ./trainer_for_asc_multi.ipynb
-Output Notebook: ./papermill/trainer_for_asc_multi.ipynb
-Executing:   0%|          | 0/30 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/30 [00:01<00:48,  1.67s/cell]Executing:  10%|█         | 3/30 [00:04<00:44,  1.66s/cell]Executing:  13%|█▎        | 4/30 [00:05<00:33,  1.27s/cell]Executing:  20%|██        | 6/30 [00:06<00:19,  1.22cell/s]Executing:  27%|██▋       | 8/30 [00:06<00:11,  2.00cell/s]Executing:  33%|███▎      | 10/30 [00:07<00:12,  1.64cell/s]Executing:  40%|████      | 12/30 [00:13<00:23,  1.31s/cell]
-
-
-Executing:  43%|████▎     | 13/30 [00:14<00:22,  1.35s/cell]Executing:  53%|█████▎    | 16/30 [00:14<00:10,  1.34cell/s]Executing:  60%|██████    | 18/30 [00:18<00:12,  1.03s/cell]Executing:  70%|███████   | 21/30 [00:19<00:07,  1.20cell/s]Executing:  77%|███████▋  | 23/30 [00:19<00:04,  1.59cell/s]Executing:  87%|████████▋ | 26/30 [00:20<00:01,  2.43cell/s]Executing:  93%|█████████▎| 28/30 [00:23<00:01,  1.34cell/s]Executing:  97%|█████████▋| 29/30 [12:45<01:56, 116.94s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Executing: 100%|██████████| 30/30 [12:47<00:00, 95.95s/cell] Executing: 100%|██████████| 30/30 [12:51<00:00, 25.72s/cell]

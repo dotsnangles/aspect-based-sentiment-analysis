@@ -1,100 +1,0 @@
-Input Notebook:  ./acd_binary_trainer.ipynb
-Output Notebook: ./papermill/acd_binary_trainer.ipynb
-Executing:   0%|          | 0/31 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/31 [00:01<00:59,  1.98s/cell]Executing:  10%|▉         | 3/31 [00:05<00:50,  1.79s/cell]Executing:  13%|█▎        | 4/31 [00:05<00:32,  1.21s/cell]Executing:  19%|█▉        | 6/31 [00:06<00:19,  1.28cell/s]Executing:  26%|██▌       | 8/31 [00:06<00:11,  2.07cell/s]Executing:  32%|███▏      | 10/31 [00:08<00:13,  1.54cell/s]Executing:  39%|███▊      | 12/31 [00:15<00:31,  1.68s/cell]
-
-
-Executing:  42%|████▏     | 13/31 [00:18<00:34,  1.92s/cell]Executing:  48%|████▊     | 15/31 [00:18<00:20,  1.25s/cell]Executing:  58%|█████▊    | 18/31 [00:21<00:15,  1.19s/cell]Executing:  68%|██████▊   | 21/31 [00:21<00:07,  1.34cell/s]Executing:  68%|██████▊   | 21/31 [00:40<00:07,  1.34cell/s]Executing:  71%|███████   | 22/31 [00:56<00:54,  6.05s/cell]Executing:  74%|███████▍  | 23/31 [00:57<00:39,  4.97s/cell]Executing:  81%|████████  | 25/31 [00:58<00:21,  3.60s/cell]Executing:  87%|████████▋ | 27/31 [00:59<00:09,  2.45s/cell]Executing:  90%|█████████ | 28/31 [01:03<00:08,  2.88s/cell]Kernel died while waiting for execute reply.
-Executing:  97%|█████████▋| 30/31 [1:40:52<17:33, 1053.81s/cell]Executing:  97%|█████████▋| 30/31 [1:40:52<03:21, 201.74s/cell] 
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/client.py", line 774, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/util.py", line 97, in ensure_async
-    result = await obj
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/jupyter_client/channels.py", line 224, in get_msg
-    ready = await self.socket.poll(timeout)
-asyncio.exceptions.CancelledError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/client.py", line 1000, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-asyncio.exceptions.CancelledError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/cli.py", line 250, in papermill
-    execute_notebook(
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/execute.py", line 107, in execute_notebook
-    nb = papermill_engines.execute_notebook_with_engine(
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/engines.py", line 49, in execute_notebook_with_engine
-    return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/engines.py", line 359, in execute_notebook
-    cls.execute_managed_notebook(nb_man, kernel_name, log_output=log_output, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/engines.py", line 418, in execute_managed_notebook
-    return PapermillNotebookClient(nb_man, **final_kwargs).execute()
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/clientwrap.py", line 45, in execute
-    self.papermill_execute_cells()
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/clientwrap.py", line 72, in papermill_execute_cells
-    self.execute_cell(cell, index)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/util.py", line 85, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/util.py", line 60, in just_run
-    return loop.run_until_complete(coro)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
-    return future.result()
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/client.py", line 1004, in async_execute_cell
-    raise DeadKernelError("Kernel died")
-nbclient.exceptions.DeadKernelError: Kernel died
-Input Notebook:  ./asc_binary_trainer.ipynb
-Output Notebook: ./papermill/asc_binary_trainer.ipynb
-Executing:   0%|          | 0/31 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/31 [00:01<00:47,  1.58s/cell]Executing:  10%|▉         | 3/31 [00:05<00:50,  1.82s/cell]Executing:  13%|█▎        | 4/31 [00:05<00:34,  1.26s/cell]Executing:  19%|█▉        | 6/31 [00:06<00:20,  1.19cell/s]Executing:  26%|██▌       | 8/31 [00:06<00:11,  1.94cell/s]Executing:  32%|███▏      | 10/31 [00:08<00:13,  1.59cell/s]Executing:  39%|███▊      | 12/31 [00:12<00:23,  1.25s/cell]
-
-
-Executing:  42%|████▏     | 13/31 [00:16<00:28,  1.60s/cell]Executing:  48%|████▊     | 15/31 [00:16<00:16,  1.04s/cell]Executing:  55%|█████▍    | 17/31 [00:16<00:09,  1.42cell/s]Executing:  61%|██████▏   | 19/31 [00:19<00:12,  1.04s/cell]Executing:  71%|███████   | 22/31 [00:24<00:11,  1.33s/cell]Executing:  77%|███████▋  | 24/31 [00:25<00:07,  1.01s/cell]Executing:  84%|████████▍ | 26/31 [00:25<00:03,  1.35cell/s]Executing:  90%|█████████ | 28/31 [00:30<00:03,  1.29s/cell]Kernel died while waiting for execute reply.
-Executing:  97%|█████████▋| 30/31 [00:57<00:04,  4.90s/cell]Executing:  97%|█████████▋| 30/31 [00:57<00:01,  1.93s/cell]
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/client.py", line 774, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/util.py", line 97, in ensure_async
-    result = await obj
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/jupyter_client/channels.py", line 224, in get_msg
-    ready = await self.socket.poll(timeout)
-asyncio.exceptions.CancelledError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/client.py", line 1000, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-asyncio.exceptions.CancelledError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/cli.py", line 250, in papermill
-    execute_notebook(
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/execute.py", line 107, in execute_notebook
-    nb = papermill_engines.execute_notebook_with_engine(
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/engines.py", line 49, in execute_notebook_with_engine
-    return self.get_engine(engine_name).execute_notebook(nb, kernel_name, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/engines.py", line 359, in execute_notebook
-    cls.execute_managed_notebook(nb_man, kernel_name, log_output=log_output, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/engines.py", line 418, in execute_managed_notebook
-    return PapermillNotebookClient(nb_man, **final_kwargs).execute()
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/clientwrap.py", line 45, in execute
-    self.papermill_execute_cells()
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/clientwrap.py", line 72, in papermill_execute_cells
-    self.execute_cell(cell, index)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/util.py", line 85, in wrapped
-    return just_run(coro(*args, **kwargs))
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/util.py", line 60, in just_run
-    return loop.run_until_complete(coro)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
-    return future.result()
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/nbclient/client.py", line 1004, in async_execute_cell
-    raise DeadKernelError("Kernel died")
-nbclient.exceptions.DeadKernelError: Kernel died

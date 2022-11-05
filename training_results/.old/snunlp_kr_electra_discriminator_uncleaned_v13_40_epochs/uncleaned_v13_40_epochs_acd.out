@@ -1,52 +1,0 @@
-Input Notebook:  ./trainer_for_acd_binary.ipynb
-Output Notebook: ./papermill/trainer_for_acd_binary.ipynb
-Executing:   0%|          | 0/30 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/30 [00:01<00:46,  1.59s/cell]Executing:  10%|█         | 3/30 [00:04<00:39,  1.47s/cell]Executing:  13%|█▎        | 4/30 [00:04<00:27,  1.05s/cell]Executing:  20%|██        | 6/30 [00:05<00:16,  1.43cell/s]Executing:  30%|███       | 9/30 [00:05<00:07,  2.80cell/s]Executing:  37%|███▋      | 11/30 [00:07<00:09,  1.98cell/s]Executing:  40%|████      | 12/30 [00:24<01:06,  3.72s/cell]
-
-
-Executing:  43%|████▎     | 13/30 [00:26<00:55,  3.28s/cell]Executing:  50%|█████     | 15/30 [00:26<00:30,  2.06s/cell]Executing:  57%|█████▋    | 17/30 [00:31<00:28,  2.20s/cell]Executing:  67%|██████▋   | 20/30 [00:31<00:12,  1.27s/cell]Executing:  67%|██████▋   | 20/30 [00:50<00:12,  1.27s/cell]Executing:  70%|███████   | 21/30 [01:05<01:01,  6.80s/cell]Executing:  77%|███████▋  | 23/30 [01:07<00:34,  4.90s/cell]Executing:  83%|████████▎ | 25/30 [01:07<00:16,  3.37s/cell]Executing:  90%|█████████ | 27/30 [01:10<00:08,  2.79s/cell]Executing:  97%|█████████▋| 29/30 [7:54:53<1:13:08, 4388.37s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Executing: 100%|██████████| 30/30 [7:54:54<00:00, 3595.89s/cell]  Executing: 100%|██████████| 30/30 [7:54:58<00:00, 949.95s/cell] 
-Input Notebook:  ./trainer_for_asc_multi.ipynb
-Output Notebook: ./papermill/trainer_for_asc_multi.ipynb
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/iorw.py", line 212, in read
-    json.loads(path)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/json/__init__.py", line 346, in loads
-    return _default_decoder.decode(s)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/json/decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/bin/papermill", line 10, in <module>
-    sys.exit(papermill())
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
-    return self.main(*args, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 1055, in main
-    rv = self.invoke(ctx)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
-    return ctx.invoke(self.callback, **ctx.params)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/core.py", line 760, in invoke
-    return __callback(*args, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/click/decorators.py", line 26, in new_func
-    return f(get_current_context(), *args, **kwargs)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/cli.py", line 250, in papermill
-    execute_notebook(
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/execute.py", line 90, in execute_notebook
-    nb = load_notebook_node(input_path)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/iorw.py", line 460, in load_notebook_node
-    nb = nbformat.reads(papermill_io.read(notebook_path), as_version=4)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/iorw.py", line 116, in read
-    notebook_metadata = self.get_handler(path).read(path)
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/iorw.py", line 216, in read
-    raise e
-  File "/home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.10/site-packages/papermill/iorw.py", line 206, in read
-    with io.open(path, 'r', encoding="utf-8") as f:
-FileNotFoundError: [Errno 2] No such file or directory: './trainer_for_asc_multi.ipynb'
