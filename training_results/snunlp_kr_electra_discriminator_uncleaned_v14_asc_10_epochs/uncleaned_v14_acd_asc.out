@@ -1,0 +1,19 @@
+Input Notebook:  ./trainer_for_asc_m_new.ipynb
+Output Notebook: ./papermill/trainer_for_asc_m_new.ipynb
+Executing:   0%|          | 0/30 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   3%|▎         | 1/30 [00:01<00:54,  1.87s/cell]Executing:  10%|█         | 3/30 [00:07<01:11,  2.63s/cell]Executing:  13%|█▎        | 4/30 [00:07<00:45,  1.76s/cell]Executing:  20%|██        | 6/30 [00:08<00:25,  1.06s/cell]Executing:  30%|███       | 9/30 [00:08<00:11,  1.87cell/s]Executing:  37%|███▋      | 11/30 [00:10<00:13,  1.42cell/s]Executing:  40%|████      | 12/30 [00:17<00:33,  1.86s/cell]
+
+
+Executing:  43%|████▎     | 13/30 [00:19<00:30,  1.81s/cell]Executing:  53%|█████▎    | 16/30 [00:19<00:13,  1.04cell/s]Executing:  60%|██████    | 18/30 [00:22<00:14,  1.19s/cell]Executing:  70%|███████   | 21/30 [00:23<00:07,  1.15cell/s]Executing:  77%|███████▋  | 23/30 [00:24<00:04,  1.48cell/s]Executing:  87%|████████▋ | 26/30 [00:24<00:01,  2.27cell/s]Executing:  93%|█████████▎| 28/30 [00:31<00:02,  1.30s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Executing:  97%|█████████▋| 29/30 [16:54<02:35, 155.90s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Executing: 100%|██████████| 30/30 [16:58<00:00, 127.89s/cell]Executing: 100%|██████████| 30/30 [17:03<00:00, 34.10s/cell] 
