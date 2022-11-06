@@ -1,20 +1,68 @@
-# ### new
-# import pandas as pd
+import pandas as pd
+from module.maps import *
 
-# entity_property_pair = [
-#     '본품#가격', '본품#다양성', '본품#디자인', '본품#인지도', '본품#일반', '본품#편의성', '본품#품질',
-#     '브랜드#가격', '브랜드#디자인', '브랜드#인지도', '브랜드#일반', '브랜드#품질',
-#     '제품 전체#가격', '제품 전체#다양성', '제품 전체#디자인', '제품 전체#인지도', '제품 전체#일반', '제품 전체#편의성', '제품 전체#품질',
-#     '패키지/구성품#가격', '패키지/구성품#다양성', '패키지/구성품#디자인', '패키지/구성품#일반', '패키지/구성품#편의성', '패키지/구성품#품질'
-# ]
+def reformat_raw_to_acd_b_asc_m(df):
+    acd_b =[]
+    asc_m = []
+    for _, row in df.iterrows():
+        form = row.sentence_form
+        for pair in entity_property_pair:
+            isPairInOpinion = False
+            aspect_pair = pair
+            for annotation in row.annotation:
+                entity_property = annotation[0]
+                polarity = annotation[2]
+                if pair == entity_property:
+                    acd_b_row = [row.id, form, aspect_pair, tf_name_to_id['True']]
+                    acd_b.append(acd_b_row)
+                    asc_m.append([row.id, form, aspect_pair, polarity_name_to_id[polarity]])
+                    isPairInOpinion = True
+                    break
+            if isPairInOpinion is False:
+                acd_b_row = [row.id, form, aspect_pair, tf_name_to_id['False']]
+                acd_b.append(acd_b_row)
+    return acd_b, asc_m
 
-# more_tokens = ['&name&', '&affiliation&', '&social-security-num&', '&tel-num&', '&card-num&', '&bank-account&', '&num&', '&online-account&']
+def reformat_asc_m_to_asc_b(df):
+    asc_b = []
+    for _, row in df.iterrows():
+        form = row.form
+        for polarity in polarity_id_to_name:
+            asc_pair = '#'.join([row.pair, polarity])
+            if polarity == polarity_id_to_name[row.labels]:
+                asc_b_row = [row.id, form, asc_pair, tf_name_to_id['True']]
+                asc_b.append(asc_b_row)
+            else:
+                asc_b_row = [row.id, form, asc_pair, tf_name_to_id['False']]
+                asc_b.append(asc_b_row)
+    return asc_b
 
-# tf_id_to_name = ['True', 'False']
-# tf_name_to_id = {tf_id_to_name[i]: i for i in range(len(tf_id_to_name))}
 
-# polarity_id_to_name = ['positive', 'negative', 'neutral']
-# polarity_name_to_id = {polarity_id_to_name[i]: i for i in range(len(polarity_id_to_name))}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # def reformat(df):
 #     ep =[]

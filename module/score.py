@@ -24,7 +24,7 @@ def evaluation_f1(true_data, pred_data):
         is_pipeline_found = False
         for y_ano  in true_data_list[i]['annotation']:
             y_category = y_ano[0]
-            y_polarity = y_ano[1]
+            y_polarity = y_ano[2]
 
             for p_ano in pred_data_list[i]['annotation']:
                 p_category = p_ano[0]
@@ -57,7 +57,7 @@ def evaluation_f1(true_data, pred_data):
 
             for y_ano  in true_data_list[i]['annotation']:
                 y_category = y_ano[0]
-                y_polarity = y_ano[1]
+                y_polarity = y_ano[2]
 
                 if y_category == p_category:
                     is_ce_found = True
@@ -71,6 +71,9 @@ def evaluation_f1(true_data, pred_data):
 
             if is_pipeline_found is False:
                 pipeline_eval['FP'] += 1
+            
+            is_ce_found = False
+            is_pipeline_found = False
 
     ce_precision = ce_eval['TP']/(ce_eval['TP']+ce_eval['FP'])
     ce_recall = ce_eval['TP']/(ce_eval['TP']+ce_eval['FN'])

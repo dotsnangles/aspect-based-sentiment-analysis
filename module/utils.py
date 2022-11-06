@@ -1,7 +1,51 @@
 from typing import Counter
-
-
 from collections import Counter
+
+def show_rows(row_iterator, times=25):
+    for _ in range(times):
+        idx, row = next(row_iterator)
+        print(idx, row.form, row.pair, row.labels)
+    print()
+
+def count_tags(df, entity_property_pair):
+    count = 0
+    tags = []
+    for idx, row in df.iterrows():
+        if len(row.annotation) > 0:
+            for annotation in row.annotation:
+                try:
+                    tags.append(annotation[0])
+                    count += 1
+                except Exception as e:
+                    print(e)
+                    print(row.id)
+
+    print('tags found: ', count)
+    print('tag set of df: ', len(set(tags)))
+    print('tag set of offered: ', len(set(entity_property_pair)))
+    print('difference: ', set(entity_property_pair)-set(tags))
+
+    tag_counter = Counter(tags)
+    tag_counter = sorted(tag_counter.items(), key=lambda x: x[1], reverse=True)
+    
+    for k, v in tag_counter:
+        # print(k.rjust(20), str(v).rjust(10))
+        if len(k) < len('제품 전체#편의성'):
+            print(f'{k}\t\t{v}')
+        else:
+            print(f'{k}\t{v}')
+            
+def remove_props(df, filter):
+    for idx, row in df.iterrows():
+        for idx in range(len(row.annotation)):
+            if row.annotation[idx][0] not in filter:
+                row.annotation[idx] = []
+        row.annotation = [el for el in row.annotation if el != []]
+    df['checker'] = df.annotation.apply(lambda x: bool(x))
+    df = df[df.checker == True].copy()
+    df['checker'] = df.annotation.apply(lambda x: False if x == [[]] else True)
+    df = df[df.checker == True].copy()
+    return df
 
 def adjust_target(sentence_form, target):
     split_sent = sentence_form.split(' ')
@@ -40,34 +84,6 @@ def adjust_target(sentence_form, target):
         new_target = sentence_form[new_target_rng[0]:new_target_rng[1]]
         return new_target, new_target_rng
 
-def count_tags(df, entity_property_pair):
-    count = 0
-    tags = []
-    for idx, row in df.iterrows():
-        if len(row.annotation) > 0:
-            for annotation in row.annotation:
-                try:
-                    tags.append(annotation[0])
-                    count += 1
-                except Exception as e:
-                    print(e)
-                    print(row.id)
-
-    print('tags found: ', count)
-    print('tag set of df: ', len(set(tags)))
-    print('tag set of offered: ', len(set(entity_property_pair)))
-    print('difference: ', set(entity_property_pair)-set(tags))
-
-    tag_counter = Counter(tags)
-    tag_counter = sorted(tag_counter.items(), key=lambda x: x[1], reverse=True)
-    
-    for k, v in tag_counter:
-        # print(k.rjust(20), str(v).rjust(10))
-        if len(k) < len('제품 전체#편의성'):
-            print(f'{k}\t\t{v}')
-        else:
-            print(f'{k}\t{v}')
-        
 def make_token_classification_pair(original_input, annotations):
     targets = []
     for annotation in annotations:
@@ -95,18 +111,6 @@ def make_token_classification_pair(original_input, annotations):
         split_label.append(0)
 
     return split_input, split_label
-
-def remove_props(df, filter):
-    for idx, row in df.iterrows():
-        for idx in range(len(row.annotation)):
-            if row.annotation[idx][0] not in filter:
-                row.annotation[idx] = []
-        row.annotation = [el for el in row.annotation if el != []]
-    df['checker'] = df.annotation.apply(lambda x: bool(x))
-    df = df[df.checker == True].copy()
-    df['checker'] = df.annotation.apply(lambda x: False if x == [[]] else True)
-    df = df[df.checker == True].copy()
-    return df
 
 def generate_token_classification_data(df):
     split_inputs, split_labels = [], []
