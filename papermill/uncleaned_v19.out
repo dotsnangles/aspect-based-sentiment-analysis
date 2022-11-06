@@ -1,42 +1,0 @@
-Input Notebook:  ./train_acd.ipynb
-Output Notebook: ./papermill/train_acd.ipynb
-Executing:   0%|          | 0/29 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/29 [00:01<00:43,  1.54s/cell]Executing:  10%|█         | 3/29 [00:05<00:47,  1.83s/cell]Executing:  17%|█▋        | 5/29 [00:05<00:22,  1.09cell/s]Executing:  21%|██        | 6/29 [00:06<00:19,  1.17cell/s]Executing:  31%|███       | 9/29 [00:06<00:08,  2.38cell/s]Executing:  38%|███▊      | 11/29 [00:08<00:10,  1.66cell/s]Executing:  41%|████▏     | 12/29 [00:10<00:16,  1.00cell/s]Executing:  45%|████▍     | 13/29 [00:11<00:12,  1.24cell/s]Executing:  55%|█████▌    | 16/29 [00:14<00:12,  1.02cell/s]Executing:  66%|██████▌   | 19/29 [00:14<00:05,  1.68cell/s]Executing:  66%|██████▌   | 19/29 [00:30<00:05,  1.68cell/s]Executing:  69%|██████▉   | 20/29 [00:36<00:36,  4.04s/cell]Executing:  76%|███████▌  | 22/29 [00:41<00:24,  3.53s/cell]Executing:  83%|████████▎ | 24/29 [00:41<00:12,  2.44s/cell]Executing:  90%|████████▉ | 26/29 [00:48<00:08,  2.81s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Executing:  97%|█████████▋| 28/29 [31:57<04:47, 287.61s/cell]wandb: Waiting for W&B process to finish... (success).
-Executing:  97%|█████████▋| 28/29 [32:03<01:08, 68.69s/cell] 
-
-Aborted!
-Task was destroyed but it is pending!
-task: <Task pending name='Task-89' coro=<NotebookClient._async_poll_kernel_alive() running at /home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.8/site-packages/nbclient/client.py:816> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f2886764190>()]>>
-Task was destroyed but it is pending!
-task: <Task pending name='Task-90' coro=<NotebookClient._async_poll_output_msg() running at /home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.8/site-packages/nbclient/client.py:806> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f288671a7c0>()]>>
-Task was destroyed but it is pending!
-task: <Task pending name='Task-91' coro=<NotebookClient._async_poll_for_reply() running at /home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.8/site-packages/nbclient/client.py:774> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f288c08d0a0>()]> cb=[<TaskWakeupMethWrapper object at 0x7f288c08d310>()]>
-Input Notebook:  ./train_asc.ipynb
-Output Notebook: ./papermill/train_asc.ipynb
-Executing:   0%|          | 0/29 [00:00<?, ?cell/s]Executing notebook with kernel: python3
-Executing:   3%|▎         | 1/29 [00:01<00:40,  1.45s/cell]Executing:   7%|▋         | 2/29 [00:01<00:17,  1.52cell/s]Executing:  10%|█         | 3/29 [00:06<01:03,  2.45s/cell]Executing:  17%|█▋        | 5/29 [00:06<00:26,  1.10s/cell]Executing:  21%|██        | 6/29 [00:06<00:22,  1.02cell/s]Executing:  31%|███       | 9/29 [00:07<00:09,  2.19cell/s]Executing:  38%|███▊      | 11/29 [00:08<00:11,  1.61cell/s]Executing:  41%|████▏     | 12/29 [00:11<00:18,  1.09s/cell]Executing:  52%|█████▏    | 15/29 [00:12<00:08,  1.63cell/s]Executing:  59%|█████▊    | 17/29 [00:15<00:11,  1.06cell/s]Executing:  69%|██████▉   | 20/29 [00:18<00:08,  1.02cell/s]Executing:  76%|███████▌  | 22/29 [00:19<00:05,  1.24cell/s]Executing:  86%|████████▌ | 25/29 [00:19<00:02,  1.91cell/s]Executing:  93%|█████████▎| 27/29 [00:25<00:02,  1.23s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
-To disable this warning, you can either:
-	- Avoid using `tokenizers` before the fork if possible
-	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
-Executing:  97%|█████████▋| 28/29 [00:28<00:01,  1.45s/cell]wandb: Waiting for W&B process to finish... (success).
-Executing:  97%|█████████▋| 28/29 [00:31<00:01,  1.12s/cell]
-
-Aborted!
-Task was destroyed but it is pending!
-task: <Task pending name='Task-91' coro=<NotebookClient._async_poll_for_reply() running at /home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.8/site-packages/nbclient/client.py:774> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f6160f14f40>()]> cb=[<TaskWakeupMethWrapper object at 0x7f6160f14af0>()]>
-Task was destroyed but it is pending!
-task: <Task pending name='Task-90' coro=<NotebookClient._async_poll_output_msg() running at /home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.8/site-packages/nbclient/client.py:806> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f6160f145b0>()]>>
-Task was destroyed but it is pending!
-task: <Task pending name='Task-89' coro=<NotebookClient._async_poll_kernel_alive() running at /home/ubuntu/anaconda3/envs/jeonghyeon/lib/python3.8/site-packages/nbclient/client.py:816> wait_for=<Future pending cb=[<TaskWakeupMethWrapper object at 0x7f6160f14fd0>()]>>
