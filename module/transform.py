@@ -1,7 +1,26 @@
 import pandas as pd
 from module.maps import *
 
-def reformat_raw_to_acd_b_asc_m(df):
+def train_reformat_raw_to_acd_b_asc_m(df):
+    
+    entity_property_pair = [
+        '본품#가격', '본품#다양성', '본품#디자인', '본품#인지도', '본품#일반', '본품#편의성', '본품#품질',
+        '브랜드#가격', '브랜드#디자인', '브랜드#인지도', '브랜드#일반', '브랜드#품질',
+        '제품 전체#가격', '제품 전체#다양성', '제품 전체#디자인', '제품 전체#인지도', '제품 전체#일반', '제품 전체#편의성', '제품 전체#품질',
+        '패키지/구성품#가격', '패키지/구성품#다양성', '패키지/구성품#디자인', '패키지/구성품#일반', '패키지/구성품#편의성', '패키지/구성품#품질',
+        '참새#독수리', '참새#황새', '참새#가마우지', '참새#개개비', '참새#송골매', 
+        '비둘기#독수리', '비둘기#황새', '비둘기#가마우지', '비둘기#개개비', '비둘기#송골매', 
+        '부엉이#독수리', '부엉이#황새', '부엉이#가마우지', '부엉이#개개비', '부엉이#송골매', 
+        '까마귀#독수리', '까마귀#황새', '까마귀#가마우지', '까마귀#개개비', '까마귀#송골매', 
+        '오리#독수리', '오리#황새', '오리#가마우지', '오리#개개비', '오리#송골매', 
+    ]
+
+    tf_id_to_name = ['True', 'False']
+    tf_name_to_id = {tf_id_to_name[i]: i for i in range(len(tf_id_to_name))}
+
+    polarity_id_to_name = ['positive', 'negative', 'neutral', 'Hummingbird', 'Woodpecker', 'Hornbill',]
+    polarity_name_to_id = {polarity_id_to_name[i]: i for i in range(len(polarity_id_to_name))}
+    
     acd_b =[]
     asc_m = []
     for _, row in df.iterrows():
@@ -23,7 +42,13 @@ def reformat_raw_to_acd_b_asc_m(df):
                 acd_b.append(acd_b_row)
     return acd_b, asc_m
 
-def reformat_asc_m_to_asc_b(df):
+def train_reformat_asc_m_to_asc_b(df):
+    
+    tf_id_to_name = ['True', 'False']
+    tf_name_to_id = {tf_id_to_name[i]: i for i in range(len(tf_id_to_name))}
+
+    polarity_id_to_name = ['positive', 'negative', 'neutral', 'Hummingbird', 'Woodpecker', 'Hornbill',]
+    
     asc_b = []
     for _, row in df.iterrows():
         form = row.form
@@ -37,9 +62,41 @@ def reformat_asc_m_to_asc_b(df):
                 asc_b.append(asc_b_row)
     return asc_b
 
+def dev_reformat_raw_to_acd_b_asc_m(df):
+    acd_b =[]
+    asc_m = []
+    for _, row in df.iterrows():
+        form = row.sentence_form
+        for pair in entity_property_pair:
+            isPairInOpinion = False
+            aspect_pair = pair
+            for annotation in row.annotation:
+                entity_property = annotation[0]
+                polarity = annotation[2]
+                if pair == entity_property:
+                    acd_b_row = [row.id, form, aspect_pair, tf_name_to_id['True']]
+                    acd_b.append(acd_b_row)
+                    asc_m.append([row.id, form, aspect_pair, polarity_name_to_id[polarity]])
+                    isPairInOpinion = True
+                    break
+            if isPairInOpinion is False:
+                acd_b_row = [row.id, form, aspect_pair, tf_name_to_id['False']]
+                acd_b.append(acd_b_row)
+    return acd_b, asc_m
 
-
-
+def dev_reformat_asc_m_to_asc_b(df):
+    asc_b = []
+    for _, row in df.iterrows():
+        form = row.form
+        for polarity in polarity_id_to_name:
+            asc_pair = '#'.join([row.pair, polarity])
+            if polarity == polarity_id_to_name[row.labels]:
+                asc_b_row = [row.id, form, asc_pair, tf_name_to_id['True']]
+                asc_b.append(asc_b_row)
+            else:
+                asc_b_row = [row.id, form, asc_pair, tf_name_to_id['False']]
+                asc_b.append(asc_b_row)
+    return asc_b
 
 
 
