@@ -12,4 +12,4 @@
 papermill ./trainer_for_acd_b_new.ipynb ./papermill/trainer_for_acd_b_new.ipynb
 papermill ./trainer_for_asc_m_new.ipynb ./papermill/trainer_for_asc_m_new.ipynb
 
-# nohup bash papermill.sh > ./papermill/uncleaned_v16.out
+# nohup bash papermill.sh > ./papermill/uncleaned_v13_maxlen_256.out
