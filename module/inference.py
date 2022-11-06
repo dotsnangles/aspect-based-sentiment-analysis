@@ -4,7 +4,18 @@ from module.maps import *
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+entity_property_pair = [
+    '본품#품질',
+    '제품 전체#일반',
+    '본품#일반',
+    '제품 전체#품질',
+    '제품 전체#디자인',
+    '본품#편의성',
+    '제품 전체#편의성',
+]
+
 def inference_m(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data):
+    print(entity_property_pair)
     acd_model.to(device)
     acd_model.eval()
     asc_model.to(device)
@@ -46,6 +57,7 @@ def inference_m(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data):
     return data
 
 def inference_b(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data):
+    print(entity_property_pair)
     acd_model.to(device)
     acd_model.eval()
     asc_model.to(device)
