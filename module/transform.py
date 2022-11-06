@@ -98,7 +98,21 @@ def dev_reformat_asc_m_to_asc_b(df):
                 asc_b.append(asc_b_row)
     return asc_b
 
-
+def test_dev_reformat_asc_m_to_asc_b(df):
+    asc_b = []
+    for _, row in df.iterrows():
+        form = row.form
+        entity_property = row.pair
+        for pair in entity_property_pair:
+            for polarity in polarity_id_to_name:
+                asc_pair = '#'.join([pair, polarity])
+                if (polarity == polarity_id_to_name[row.labels]) and (pair == entity_property):
+                    asc_b_row = [row.id, form, asc_pair, tf_name_to_id['True']]
+                    asc_b.append(asc_b_row)
+                else:
+                    asc_b_row = [row.id, form, asc_pair, tf_name_to_id['False']]
+                    asc_b.append(asc_b_row)
+    return asc_b
 
 
 
