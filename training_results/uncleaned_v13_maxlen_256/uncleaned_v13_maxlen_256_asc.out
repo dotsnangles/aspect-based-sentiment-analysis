@@ -9,3 +9,8 @@ huggingface/tokenizers: The current process just got forked, after parallelism h
 To disable this warning, you can either:
 	- Avoid using `tokenizers` before the fork if possible
 	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Executing:  97%|█████████▋| 29/30 [19:50<03:21, 201.63s/cell]huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+Executing: 100%|██████████| 30/30 [19:52<00:00, 162.31s/cell]Executing: 100%|██████████| 30/30 [19:57<00:00, 39.91s/cell] 

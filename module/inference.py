@@ -18,30 +18,30 @@ def inference_m(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data):
             continue
         for pair in entity_property_pair:
             acd_pair = pair
-            acd_encoded = acd_tokenizer(form, acd_pair, truncation=True, return_tensors="pt")
+            acd_encoded = acd_tokenizer(form, acd_pair, truncation=True, return_tensors="pt", padding='max_length', max_length=256)
             acd_encoded = {k:v.to(device) for k,v in acd_encoded.items()}
 
             with torch.no_grad():
                 acd_outputs = acd_model(**acd_encoded)
-            ce_predictions = acd_outputs['logits'].argmax(-1)
-            ce_result = tf_id_to_name[ce_predictions[0]]
+            acd_predictions = acd_outputs['logits'].argmax(-1)
+            acd_result = tf_id_to_name[acd_predictions[0]]
 
-            if ce_result == 'True':
+            if acd_result == 'True':
                 asc_pair = pair
-                asc_encoded = asc_tokenizer(form, asc_pair, truncation=True, return_tensors="pt")
+                asc_encoded = asc_tokenizer(form, asc_pair, truncation=True, return_tensors="pt", padding='max_length', max_length=256)
                 asc_encoded = {k:v.to(device) for k,v in asc_encoded.items()}
 
                 with torch.no_grad():
                     asc_outputs = asc_model(**asc_encoded)
-                pc_predictions = asc_outputs['logits'].argmax(-1)
-                pc_result = polarity_id_to_name[pc_predictions[0]]
+                asc_predictions = asc_outputs['logits'].argmax(-1)
+                asc_result = polarity_id_to_name[asc_predictions[0]]
 
                 if pair == '패키지/구성품#가격':
                     print(f'{pair} found.')
                     pair = '패키지/ 구성품#가격'
                     print(f'corrected as {pair}')
 
-                sentence['annotation'].append([pair, pc_result])
+                sentence['annotation'].append([pair, asc_result])
 
     return data
 
@@ -59,26 +59,26 @@ def inference_b(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data):
             continue
         for pair in entity_property_pair:
             acd_pair = pair
-            acd_encoded = acd_tokenizer(form, acd_pair, truncation=True, return_tensors="pt")
+            acd_encoded = acd_tokenizer(form, acd_pair, truncation=True, return_tensors="pt", padding='max_length', max_length=256)
             acd_encoded = {k:v.to(device) for k,v in acd_encoded.items()}
 
             with torch.no_grad():
                 acd_outputs = acd_model(**acd_encoded)
-            ce_predictions = acd_outputs['logits'].argmax(-1)
-            ce_result = tf_id_to_name[ce_predictions[0]]
+            acd_predictions = acd_outputs['logits'].argmax(-1)
+            acd_result = tf_id_to_name[acd_predictions[0]]
 
-            if ce_result == 'True':
+            if acd_result == 'True':
                 sentiments = ['positive', 'negative', 'neutral']
                 asc_pairs = []
                 for sentiment in sentiments:
                     asc_pair = '#'.join([pair, sentiment])
                     asc_pairs.append(asc_pair)
 
-                positive = asc_tokenizer(form, asc_pairs[0], truncation=True, return_tensors="pt")
+                positive = asc_tokenizer(form, asc_pairs[0], truncation=True, return_tensors="pt", padding='max_length', max_length=256)
                 positive = {k:v.to(device) for k,v in positive.items()}
-                negative = asc_tokenizer(form, asc_pairs[1], truncation=True, return_tensors="pt")
+                negative = asc_tokenizer(form, asc_pairs[1], truncation=True, return_tensors="pt", padding='max_length', max_length=256)
                 negative = {k:v.to(device) for k,v in negative.items()}
-                neutral = asc_tokenizer(form, asc_pairs[2], truncation=True, return_tensors="pt")
+                neutral = asc_tokenizer(form, asc_pairs[2], truncation=True, return_tensors="pt", padding='max_length', max_length=256)
                 neutral = {k:v.to(device) for k,v in neutral.items()}
 
                 with torch.no_grad():
@@ -86,14 +86,14 @@ def inference_b(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data):
                     negative_outputs = asc_model(**negative)
                     neutral_outputs = asc_model(**neutral)
 
-                pc_predictions = torch.tensor([positive_outputs['logits'][0][0], negative_outputs['logits'][0][0], neutral_outputs['logits'][0][0]]).argmax(-1)
-                pc_result = polarity_id_to_name[pc_predictions]
+                asc_predictions = torch.tensor([positive_outputs['logits'][0][0], negative_outputs['logits'][0][0], neutral_outputs['logits'][0][0]]).argmax(-1)
+                asc_result = polarity_id_to_name[asc_predictions]
 
                 if pair == '패키지/구성품#가격':
                     print(f'{pair} found.')
                     pair = '패키지/ 구성품#가격'
                     print(f'corrected as {pair}')
 
-                sentence['annotation'].append([pair, pc_result])
+                sentence['annotation'].append([pair, asc_result])
 
     return data

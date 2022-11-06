@@ -10,6 +10,6 @@
 
 
 # papermill ./train_acd_b_new.ipynb ./papermill/train_acd_b_new.ipynb
-papermill ./train_asc_m_new.ipynb ./papermill/train_asc_m_new.ipynb
+papermill ./train_asc.ipynb ./papermill/train_asc.ipynb
 
-# nohup bash papermill.sh > ./papermill/uncleaned_v13_maxlen_256.out
+# nohup bash papermill.sh > ./papermill/uncleaned_v18_maxlen_256_asc_b.out
