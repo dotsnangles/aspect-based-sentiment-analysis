@@ -36,7 +36,7 @@ evaluation_strategy = "epoch"
 
 logging_strategy = "steps"
 logging_first_step = True 
-logging_steps = 100
+logging_steps = 500
 
 def print_args():
     print(f'per_device_train_batch_size: {per_device_train_batch_size*NGPU}')
