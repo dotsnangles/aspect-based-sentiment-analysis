@@ -1,0 +1,7 @@
+Input Notebook:  ./train_asc.ipynb
+Output Notebook: ./papermill/train_asc_uncleaned_v21_run_4.ipynb
+Executing:   0%|          | 0/28 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   4%|▎         | 1/28 [00:04<01:48,  4.03s/cell]Executing:  14%|█▍        | 4/28 [00:06<00:32,  1.34s/cell]Executing:  21%|██▏       | 6/28 [00:06<00:20,  1.10cell/s]Executing:  32%|███▏      | 9/28 [00:08<00:14,  1.27cell/s]Executing:  39%|███▉      | 11/28 [00:14<00:23,  1.36s/cell]
+
+
+Executing:  43%|████▎     | 12/28 [00:15<00:23,  1.44s/cell]Executing:  54%|█████▎    | 15/28 [00:19<00:17,  1.31s/cell]Executing:  64%|██████▍   | 18/28 [00:19<00:08,  1.22cell/s]Executing:  68%|██████▊   | 19/28 [00:22<00:10,  1.11s/cell]Executing:  75%|███████▌  | 21/28 [00:22<00:05,  1.21cell/s]Executing:  86%|████████▌ | 24/28 [00:22<00:02,  1.94cell/s]Executing:  93%|█████████▎| 26/28 [00:32<00:03,  1.76s/cell]Executing:  96%|█████████▋| 27/28 [12:05<01:54, 115.00s/cell]Executing: 100%|██████████| 28/28 [12:06<00:00, 93.41s/cell] Executing: 100%|██████████| 28/28 [12:09<00:00, 26.05s/cell]
