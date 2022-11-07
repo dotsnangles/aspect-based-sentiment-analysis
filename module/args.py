@@ -12,7 +12,7 @@ report_to="wandb"
 fp16 = False
 
 num_train_epochs = 10
-batch_size = 8
+batch_size = 1
 gradient_accumulation_steps = 1
 
 optim = 'adamw_hf' # 'adamw_torch'
@@ -90,5 +90,4 @@ def print_paths(PROJECT_NAME, model_checkpoint, DATA_V, SAVE_PATH, NOTEBOOK_PATH
 def print_torch_info():
     print(f'torch.__version__: {torch.__version__}')
     print(f'torch.cuda.is_available(): {torch.cuda.is_available()}')
-    NGPU = torch.cuda.device_count()
     print(f'NGPU: {NGPU}')
