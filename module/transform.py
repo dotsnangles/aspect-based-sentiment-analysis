@@ -1,26 +1,7 @@
 import pandas as pd
 from module.maps import *
 
-def train_reformat_raw_to_acd_b_asc_m(df):
-    
-    entity_property_pair = [
-        '본품#가격', '본품#다양성', '본품#디자인', '본품#인지도', '본품#일반', '본품#편의성', '본품#품질',
-        '브랜드#가격', '브랜드#디자인', '브랜드#인지도', '브랜드#일반', '브랜드#품질',
-        '제품 전체#가격', '제품 전체#다양성', '제품 전체#디자인', '제품 전체#인지도', '제품 전체#일반', '제품 전체#편의성', '제품 전체#품질',
-        '패키지/구성품#가격', '패키지/구성품#다양성', '패키지/구성품#디자인', '패키지/구성품#일반', '패키지/구성품#편의성', '패키지/구성품#품질',
-        '참새#독수리', '참새#황새', '참새#가마우지', '참새#개개비', '참새#송골매', 
-        '비둘기#독수리', '비둘기#황새', '비둘기#가마우지', '비둘기#개개비', '비둘기#송골매', 
-        '부엉이#독수리', '부엉이#황새', '부엉이#가마우지', '부엉이#개개비', '부엉이#송골매', 
-        '까마귀#독수리', '까마귀#황새', '까마귀#가마우지', '까마귀#개개비', '까마귀#송골매', 
-        '오리#독수리', '오리#황새', '오리#가마우지', '오리#개개비', '오리#송골매', 
-    ]
-
-    tf_id_to_name = ['True', 'False']
-    tf_name_to_id = {tf_id_to_name[i]: i for i in range(len(tf_id_to_name))}
-
-    polarity_id_to_name = ['positive', 'negative', 'neutral', 'Hummingbird', 'Woodpecker', 'Hornbill',]
-    polarity_name_to_id = {polarity_id_to_name[i]: i for i in range(len(polarity_id_to_name))}
-    
+def train_reformat_raw_to_acd_b_asc_m(df, entity_property_pair=entity_property_pair):
     acd_b =[]
     asc_m = []
     for _, row in df.iterrows():
@@ -42,13 +23,7 @@ def train_reformat_raw_to_acd_b_asc_m(df):
                 acd_b.append(acd_b_row)
     return acd_b, asc_m
 
-def train_reformat_asc_m_to_asc_b(df):
-    
-    tf_id_to_name = ['True', 'False']
-    tf_name_to_id = {tf_id_to_name[i]: i for i in range(len(tf_id_to_name))}
-
-    polarity_id_to_name = ['positive', 'negative', 'neutral', 'Hummingbird', 'Woodpecker', 'Hornbill',]
-    
+def train_reformat_asc_m_to_asc_b(df, polarity_id_to_name=polarity_id_to_name):
     asc_b = []
     for _, row in df.iterrows():
         form = row.form

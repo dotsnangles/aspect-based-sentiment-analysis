@@ -12,4 +12,4 @@
 papermill ./train_acd.ipynb ./papermill/train_acd.ipynb
 papermill ./train_asc.ipynb ./papermill/train_asc.ipynb
 
-# nohup bash papermill.sh > ./papermill/uncleaned_v20.out
+# nohup bash papermill.sh > ./papermill/uncleaned_v21_maxlen_256.out
