@@ -19,7 +19,7 @@ per_device_eval_batch_size = 32
 
 optim = 'adamw_torch' # 'adamw_torch' or 'adamw_hf'
 
-learning_rate = 3e-6 / 8 * batch_size * NGPU # 5e-5
+learning_rate = 3e-6 / 8 * per_device_train_batch_size * NGPU # 5e-5
 weight_decay = 0.01 # 0
 adam_epsilon = 1e-8
 
@@ -39,7 +39,8 @@ logging_first_step = True
 logging_steps = 100
 
 def print_args():
-    print(f'batch_size: {batch_size*NGPU}')
+    print(f'per_device_train_batch_size: {per_device_train_batch_size*NGPU}')
+    print(f'per_device_eval_batch_size: {per_device_eval_batch_size*NGPU}')
     print(f'learning_rate: {learning_rate}')
     print(f'num_train_epochs: {num_train_epochs}')    
     # print()
