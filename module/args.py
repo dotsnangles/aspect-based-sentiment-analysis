@@ -15,7 +15,7 @@ num_train_epochs = 10
 batch_size = 1
 gradient_accumulation_steps = 1
 
-optim = 'adamw_hf' # 'adamw_torch'
+optim = 'adamw_torch' # 'adamw_torch' or 'adamw_hf'
 
 learning_rate = 3e-6 / 8 * batch_size * NGPU # 5e-5
 weight_decay = 0.01 # 0
