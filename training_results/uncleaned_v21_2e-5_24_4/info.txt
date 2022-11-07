@@ -1,0 +1,5 @@
+num_gpus    single
+lr          2e-5
+batch_size  24
+epoch       4
+maxlen      false

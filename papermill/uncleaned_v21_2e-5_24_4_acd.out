@@ -1,0 +1,7 @@
+Input Notebook:  ./train_acd.ipynb
+Output Notebook: ./papermill/train_acd_2e-5_24_4.ipynb
+Executing:   0%|          | 0/28 [00:00<?, ?cell/s]Executing notebook with kernel: python3
+Executing:   4%|▎         | 1/28 [00:03<01:44,  3.85s/cell]Executing:  14%|█▍        | 4/28 [00:06<00:33,  1.38s/cell]Executing:  21%|██▏       | 6/28 [00:07<00:20,  1.06cell/s]Executing:  32%|███▏      | 9/28 [00:08<00:14,  1.32cell/s]Executing:  39%|███▉      | 11/28 [00:13<00:22,  1.34s/cell]
+
+
+Executing:  43%|████▎     | 12/28 [00:16<00:23,  1.49s/cell]Executing:  54%|█████▎    | 15/28 [00:19<00:17,  1.34s/cell]Executing:  64%|██████▍   | 18/28 [00:19<00:08,  1.19cell/s]Executing:  68%|██████▊   | 19/28 [00:39<00:33,  3.73s/cell]Executing:  75%|███████▌  | 21/28 [00:41<00:20,  2.94s/cell]Executing:  86%|████████▌ | 24/28 [00:41<00:07,  1.78s/cell]Executing:  93%|█████████▎| 26/28 [00:51<00:05,  2.64s/cell]

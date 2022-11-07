@@ -15,5 +15,5 @@
 # papermill ./train_asc.ipynb ./papermill/train_asc.ipynb
 # nohup bash papermill.sh > ./papermill/uncleaned_v21_maxlen_false_asc.out
 
-nohup papermill ./train_acd.ipynb ./papermill/train_acd.ipynb > ./papermill/uncleaned_v21_maxlen_false_acd.out
-nohup papermill ./train_asc.ipynb ./papermill/train_asc.ipynb > ./papermill/uncleaned_v21_maxlen_false_asc.out
+nohup papermill ./train_acd.ipynb ./papermill/train_acd_2e-5_24_4.ipynb > ./papermill/uncleaned_v21_2e-5_24_4_acd.out
+nohup papermill ./train_asc.ipynb ./papermill/train_asc_2e-5_24_4.ipynb > ./papermill/uncleaned_v21_2e-5_24_4_asc.out
