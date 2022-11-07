@@ -9,7 +9,7 @@
 
 
 
-# papermill ./train_acd.ipynb ./papermill/train_acd.ipynb
+papermill ./train_acd.ipynb ./papermill/train_acd.ipynb
 # nohup bash papermill.sh > ./papermill/uncleaned_v21_maxlen_false_acd.out
 
 # papermill ./train_asc.ipynb ./papermill/train_asc.ipynb
