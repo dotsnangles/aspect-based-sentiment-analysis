@@ -48,6 +48,12 @@ def remove_props(df, filter):
     return df
 
 def adjust_target(sentence_form, target):
+    
+    # string = '나는 오늘 학교에 간다'
+    # rng =[3, 5]
+    # new_trg = f' {string[rng[0]:rng[1]]} '
+    # string[0:3] + new_trg + string[5:]
+    
     split_sent = sentence_form.split(' ')
     split_target = target.split(' ')
     if len(split_target) > 1:

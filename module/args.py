@@ -11,7 +11,7 @@ report_to="wandb"
 
 fp16 = False
 
-num_train_epochs = 4
+num_train_epochs = 12
 per_device_train_batch_size = 24
 per_device_eval_batch_size = 24
 gradient_accumulation_steps = 1
@@ -22,7 +22,7 @@ learning_rate = 2e-5 # 5e-5 / 8 * per_device_train_batch_size * NGPU # 5e-5 3e-6
 weight_decay = 0.01 # 0
 adam_epsilon = 1e-8
 
-lr_scheduler_type = 'cosine'
+lr_scheduler_type = 'cosine_with_restarts' # ['linear', 'cosine', 'cosine_with_restarts', 'polynomial', 'constant', 'constant_with_warmup']
 warmup_ratio = 0
 
 save_total_limit = 2
