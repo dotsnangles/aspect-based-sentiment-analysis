@@ -23,9 +23,8 @@ def inference_m_ensemble(acd_ensemble, asc_ensemble, data, entity_property_pair)
         for pair in entity_property_pair:
             acd_pair = pair
 
-            acd_outputs = acd_ensemble(form, acd_pair)
-            acd_predictions = acd_outputs.argmax(-1)
-            acd_result = tf_id_to_name[acd_predictions[0]]
+            acd_predictions = acd_ensemble(form, acd_pair)
+            acd_result = tf_id_to_name[acd_predictions]
 
             if acd_result == 'True':
                 asc_pair = pair
@@ -47,6 +46,43 @@ def inference_m_ensemble(acd_ensemble, asc_ensemble, data, entity_property_pair)
         print(item, end='\n\n')
 
     return data
+
+# def inference_m_ensemble(acd_ensemble, asc_ensemble, data, entity_property_pair):
+#     print(entity_property_pair)
+#     failed = []
+#     for sentence in tqdm(data):
+#         form = sentence['sentence_form']
+#         sentence['annotation'] = []
+#         if type(form) != str:
+#             print("form type is wrong: ", form)
+#             continue
+#         for pair in entity_property_pair:
+#             acd_pair = pair
+
+#             acd_outputs = acd_ensemble(form, acd_pair)
+#             acd_predictions = acd_outputs.argmax(-1)
+#             acd_result = tf_id_to_name[acd_predictions[0]]
+
+#             if acd_result == 'True':
+#                 asc_pair = pair
+
+#                 asc_outputs = asc_ensemble(form, asc_pair)
+#                 asc_predictions = asc_outputs.argmax(-1)
+#                 asc_result = polarity_id_to_name[asc_predictions[0]]
+
+#                 if pair == '패키지/구성품#가격':
+#                     print(f'{pair} found.')
+#                     pair = '패키지/ 구성품#가격'
+#                     print(f'corrected as {pair}')
+
+#                 sentence['annotation'].append([pair, asc_result])
+#         if bool(sentence['annotation']) == False:
+#             failed.append(form)
+#     print(f'number of failed: {len(failed)}')
+#     for item in failed:
+#         print(item, end='\n\n')
+
+#     return data
 
 def inference_m(acd_tokenizer, asc_tokenizer, acd_model, asc_model, data, entity_property_pair):
     print(entity_property_pair)
