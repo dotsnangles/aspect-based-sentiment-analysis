@@ -1,0 +1,10 @@
+ACD_CHECKPOINT:  training_results/snunlp_kr_electra_discriminator_uncleaned_v5/acd/snunlp_kr_electra_discriminator_uncleaned_v5/checkpoint-3750
+ASC_CHECKPOINT:  training_results/snunlp_kr_electra_discriminator_uncleaned_v5/asc/snunlp_kr_electra_discriminator_uncleaned_v5/checkpoint-400
+INFERENCE DATA:  dataset/nikluge-sa-2022-dev.jsonl
+EVAL_MODE : True
+
+
+SENTIMENT_FILTER:  True
+FILTER:  ['본품#품질', '제품 전체#일반', '본품#일반', '제품 전체#품질', '제품 전체#디자인', '본품#편의성']
+('category extraction result', {'Precision': 0.7339561332250203, 'Recall': 0.5868788567716792, 'F1': 0.6522288395596464})
+('entire pipeline result', {'Precision': 0.7243199350385708, 'Recall': 0.5794088989931796, 'F1': 0.6438108985925659})
